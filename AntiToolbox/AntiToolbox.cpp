@@ -158,7 +158,7 @@ THook(void,
         if (device_model == "") {
             logger.info("Null model detected: {}, using Horion client?", player_name);
             if (!EnableCustomCmd) {
-                sp->kick(u8"§cNull model");
+                sp->kick("Null model");
             } else {
                 customCmdExe(player_name);
             }
