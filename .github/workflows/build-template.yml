@@ -1,6 +1,26 @@
 name: Build Plugin(Publish if tag)
 
-on: [ workflow_dispatch ]
+on:
+  pull_request:
+    paths:
+      - '**.cpp'
+      - '**.cc'
+      - '**.cxx'
+      - '**.c'
+      - '**.hpp'
+      - '**.hh'
+      - '**.hxx'
+      - '**.h'
+  push:
+    paths:
+      - '**.cpp'
+      - '**.cc'
+      - '**.cxx'
+      - '**.c'
+      - '**.hpp'
+      - '**.hh'
+      - '**.hxx'
+      - '**.h'
 
 env:
   PLUGIN_NAME: AntiToolbox
