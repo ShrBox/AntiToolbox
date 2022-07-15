@@ -1,26 +1,6 @@
 name: Build Plugin
 
-on:
-  pull_request:
-    paths:
-      - '**.cpp'
-      - '**.cc'
-      - '**.cxx'
-      - '**.c'
-      - '**.hpp'
-      - '**.hh'
-      - '**.hxx'
-      - '**.h'
-  push:
-    paths:
-      - '**.cpp'
-      - '**.cc'
-      - '**.cxx'
-      - '**.c'
-      - '**.hpp'
-      - '**.hh'
-      - '**.hxx'
-      - '**.h'
+on: [push, pull_request]
 
 env:
   PLUGIN_NAME: AntiToolbox
