@@ -18,14 +18,14 @@
     <ClInclude Include="framework.h">
       <Filter>Header</Filter>
     </ClInclude>
-    <ClInclude Include="pch.h">
-      <Filter>Header</Filter>
-    </ClInclude>
     <ClInclude Include="Version.h">
       <Filter>Source</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Resourse</Filter>
+    </ClInclude>
+    <ClInclude Include="base64.h">
+      <Filter>Header</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -35,7 +35,10 @@
     <ClCompile Include="pch.cpp">
       <Filter>Source</Filter>
     </ClCompile>
-    <ClCompile Include="Plugin.cpp">
+    <ClCompile Include="AntiToolbox.cpp">
+      <Filter>Source</Filter>
+    </ClCompile>
+    <ClCompile Include="base64.cpp">
       <Filter>Source</Filter>
     </ClCompile>
   </ItemGroup>

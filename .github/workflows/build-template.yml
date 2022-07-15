@@ -3,9 +3,9 @@ name: Build Plugin(Publish if tag)
 on: [ workflow_dispatch ]
 
 env:
-  PLUGIN_NAME: Template
-  SOLUTION_FILE_PATH: ./Template.sln
-  VERSION_FILE_PATH: Template/Version.h
+  PLUGIN_NAME: AntiToolbox
+  SOLUTION_FILE_PATH: ./AntiToolbox.sln
+  VERSION_FILE_PATH: AntiToolbox/Version.h
   BUILD_CONFIGURATION: Release
   Platform: X64
   SDK_DIR: ./SDK
@@ -116,7 +116,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         if: startsWith(github.ref, 'refs/tags/')
         with:
-          # body_path: ${{ github.workspace }}\CHANGELOG.txt
+          body_path: ${{ github.workspace }}\CHANGELOG.md
           files: |
             ${{ github.workspace }}\${{env.PLUGIN_NAME}}-${{ steps.rel.outputs.tag }}.zip
             ${{ github.workspace }}\PDB-${{ steps.rel.outputs.tag }}.zip
