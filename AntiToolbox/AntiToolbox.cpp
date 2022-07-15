@@ -156,9 +156,9 @@ THook(void,
         std::string player_name = sp->getRealName();
 
         if (device_model == "") {
-            logger.info("Null model detected: {}, using Horion client?", player_name);
+            logger.info("Unknown model detected: {}, using Horion client?", player_name);
             if (!EnableCustomCmd) {
-                sp->kick("Null model");
+                sp->kick("Unknown model");
             } else {
                 customCmdExe(player_name);
             }
