@@ -1,4 +1,4 @@
-name: Build Plugin
+name: Build(CMake)
 
 on: [push, pull_request]
 
@@ -117,4 +117,4 @@ jobs:
             ${{ github.workspace }}\${{env.PLUGIN_NAME}}-${{ steps.rel.outputs.tag }}.zip
             ${{ github.workspace }}\PDB-${{ steps.rel.outputs.tag }}.zip
         env:
-          GITHUB_REPOSITORY: ${{env.GITHUB_ACTION_REPOSITORY}
+          GITHUB_REPOSITORY: ${{env.GITHUB_ACTION_REPOSITORY}}
