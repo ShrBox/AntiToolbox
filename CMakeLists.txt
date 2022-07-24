@@ -25,10 +25,10 @@ add_link_options(
 )
 
 add_library(AntiToolbox SHARED ${SRC_FILES})
-target_link_libraries(AntiToolbox "${PROJECT_SOURCE_DIR}/SDK/Lib/SymDBHelper.lib"
+target_link_libraries(AntiToolbox "${PROJECT_SOURCE_DIR}/SDK/Lib/LiteLoader.lib"
         "${PROJECT_SOURCE_DIR}/SDK/Lib/bedrock_server_api.lib"
         "${PROJECT_SOURCE_DIR}/SDK/Lib/bedrock_server_var.lib"
-        "${PROJECT_SOURCE_DIR}/SDK/Lib/LiteLoader.lib")
+        "${PROJECT_SOURCE_DIR}/SDK/Lib/SymDBHelper.lib")
 
 include_directories(${PROJECT_SOURCE_DIR}/SDK/Header)
 include_directories(${PROJECT_SOURCE_DIR}/SDK/Header/third-party)
