@@ -9,12 +9,12 @@
 #define PLUGIN_INTRODUCTION         "Block toolbox players"
 #define PLUGIN_AUTHOR               "ShrBox"
 #define PLUGIN_VERSION_MAJOR        2
-#define PLUGIN_VERSION_MINOR        4
+#define PLUGIN_VERSION_MINOR        5
 #define PLUGIN_VERSION_REVISION     0
 #define PLUGIN_VERSION_BUILD        0
 #define PLUGIN_VERSION_STATUS       PLUGIN_VERSION_RELEASE
 
-#define TARGET_BDS_PROTOCOL_VERSION 534
+#define TARGET_BDS_PROTOCOL_VERSION 544
 // used by github actions(TODO)
 //#define TARGET_BDS_VERSION          1.18.30.04
 
