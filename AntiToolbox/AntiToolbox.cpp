@@ -12,7 +12,7 @@
 #include "Version.h"
 #include <ServerAPI.h>
 
-std::string Kick_message = u8"§cDon't use toolbox!";
+std::string Kick_message = "§cDon't use toolbox!";
 std::vector<std::string> Array;
 bool FakeNameDetection = true;
 std::vector<std::string> CmdArray;
@@ -21,7 +21,7 @@ Logger logger(PLUGIN_NAME);
 
 inline void CheckProtocolVersion() {
 #ifdef TARGET_BDS_PROTOCOL_VERSION
-    auto currentProtocol = LL::getServerProtocolVersion();
+    auto currentProtocol = ll::getServerProtocolVersion();
     if (TARGET_BDS_PROTOCOL_VERSION != currentProtocol)
     {
         logger.warn("Protocol version not match, target version: {}, current version: {}.",
@@ -61,7 +61,7 @@ void loadConfig() {
         if (document.HasMember("WhiteList")) {
             auto arraylist = document["WhiteList"].GetArray();
             for (rapidjson::Value::ConstValueIterator itr = arraylist.Begin(); itr != arraylist.End(); ++itr) {
-                Array.push_back(itr->GetString());
+                Array.emplace_back(itr->GetString());
             }
         } else {
             logger.warn("Config WhiteList not found");
@@ -79,7 +79,7 @@ void loadConfig() {
         if (document.HasMember("CustomCmd")) {
             auto arraylist = document["CustomCmd"].GetArray();
             for (rapidjson::Value::ConstValueIterator itr = arraylist.Begin(); itr != arraylist.End(); ++itr) {
-                CmdArray.push_back(itr->GetString());
+                CmdArray.emplace_back(itr->GetString());
             }
         } else {
             logger.warn("Config CmdArray not found");
@@ -88,15 +88,15 @@ void loadConfig() {
 }
 
 void customCmdExe(std::string player_name) {
-    if (CmdArray.size() > 0) {
-        auto spacePos = player_name.find(" ");
-        if (spacePos != player_name.npos) {
+    if (!CmdArray.empty()) {
+        auto spacePos = player_name.find(' ');
+        if (spacePos != std::string::npos) {
             player_name = "\"" + player_name + "\"";
         }
     }
     for (std::string cmd: CmdArray) {
         auto position = cmd.find("%player%");
-        if (position != cmd.npos) {
+        if (position != std::string::npos) {
             cmd.replace(position, 9, player_name);
         }
         //std::cout << cmd << "\n";
@@ -141,10 +141,10 @@ std::vector<string> split(const string &str, const char pattern) {
 THook(void,
       "?sendLoginMessageLocal@ServerNetworkHandler@@QEAAXAEBVNetworkIdentifier@@AEBVConnectionRequest@@AEAVServerPlayer@@@Z",
       ServerNetworkHandler *thi, NetworkIdentifier *networkId, ConnectionRequest *con_req, ServerPlayer *sp) {
-    unsigned short device_os = con_req->getDeviceOS();
-    if (device_os == 1) {
-        std::string pkt = base64_decode(con_req->rawToken.get()->data);
-        for (std::string pl_name: Array) { // WhiteList detecting
+    BuildPlatform device_os = con_req->getDeviceOS();
+    if (device_os == BuildPlatform::Android) {
+        std::string pkt = base64_decode(con_req->mRawToken->mData);
+        for (const std::string& pl_name: Array) { // WhiteList detecting
             std::string xuid = PlayerInfo::getXuid(pl_name);
             if (xuid == sp->getXuid()) { // WhiteList detected
                 return original(thi, networkId, con_req, sp);
@@ -155,7 +155,7 @@ THook(void,
         std::string device_model = document["DeviceModel"].GetString();
         std::string player_name = sp->getRealName();
 
-        if (device_model == "") {
+        if (device_model.empty()) {
             logger.info("Unknown model detected: {}, using Horion client?", player_name);
             if (!EnableCustomCmd) {
                 sp->kick("Unknown model");
