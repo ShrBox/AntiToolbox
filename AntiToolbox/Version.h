@@ -32,7 +32,7 @@
 
 // The stage of your plugin, which can be PLUGIN_VERSION_DEV, PLUGIN_VERSION_BETA
 // and PLUGIN_VERSION_RELEASE
-#define PLUGIN_VERSION_STATUS PLUGIN_VERSION_RELEASE
+#define PLUGIN_VERSION_STATUS PLUGIN_VERSION_DEV
 
 // The target protocol version of your plugin. If you do not know how to set it,
 // please start the latest version of LiteLoaderBDS and get the protocol version.
@@ -61,7 +61,7 @@
 #else
 
 #define PLUGIN_FILE_VERSION_FLAG 0x0L
-#define PLUGIN_LLVERSION_STATUS LL::Version::Release
+#define PLUGIN_LLVERSION_STATUS ll::Version::Release
 #define PLUGIN_FILE_VERSION_STRING TO_VERSION_STRING(PLUGIN_VERSION_MAJOR.PLUGIN_VERSION_MINOR.PLUGIN_VERSION_REVISION.PLUGIN_VERSION_ACTIONS)
 
 #endif
