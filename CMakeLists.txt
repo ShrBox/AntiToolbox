@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.21)
 project(AntiToolbox)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_BUILD_TYPE Release)
 set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/x64/)
 set(TARGET_DIR ${CMAKE_SOURCE_DIR}/x64/Release/)
@@ -25,13 +25,13 @@ add_link_options(
 )
 
 add_library(AntiToolbox SHARED ${SRC_FILES})
-target_link_libraries(AntiToolbox "${PROJECT_SOURCE_DIR}/SDK/Lib/LiteLoader.lib"
-        "${PROJECT_SOURCE_DIR}/SDK/Lib/bedrock_server_api.lib"
-        "${PROJECT_SOURCE_DIR}/SDK/Lib/bedrock_server_var.lib"
-        "${PROJECT_SOURCE_DIR}/SDK/Lib/SymDBHelper.lib")
+target_link_libraries(AntiToolbox "${PROJECT_SOURCE_DIR}/SDK/lib/LiteLoader.lib"
+        "${PROJECT_SOURCE_DIR}/SDK/lib/bedrock_server_api.lib"
+        "${PROJECT_SOURCE_DIR}/SDK/lib/bedrock_server_var.lib"
+        "${PROJECT_SOURCE_DIR}/SDK/lib/SymDBHelper.lib")
 
-include_directories(${PROJECT_SOURCE_DIR}/SDK/Header)
-include_directories(${PROJECT_SOURCE_DIR}/SDK/Header/third-party)
+include_directories(${PROJECT_SOURCE_DIR}/SDK/include)
+include_directories(${PROJECT_SOURCE_DIR}/SDK/include/llapi)
 include_directories(${PROJECT_SOURCE_DIR}/Header)
 
 add_custom_command(TARGET AntiToolbox PRE_BUILD
