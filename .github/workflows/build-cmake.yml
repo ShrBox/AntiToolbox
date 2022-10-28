@@ -15,7 +15,7 @@ jobs:
     runs-on: windows-latest
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v2.5.0
         with:
           fetch-depth: 0
           submodules: 'true'
@@ -96,13 +96,13 @@ jobs:
         shell: bash
 
       - name: Upload PLUGIN
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3.1.1
         with:
           name: ${{env.PLUGIN_NAME}}-actions-${{ github.run_number }}
           path: ${{ github.workspace }}\output\${{env.PLUGIN_NAME}}
 
       - name: Upload PDB
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3.1.1
         with:
           name: PDB-actions-${{ github.run_number }}
           path: ${{ github.workspace }}\output\PDB
