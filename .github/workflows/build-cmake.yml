@@ -4,11 +4,11 @@ on: [push, pull_request]
 
 env:
   PLUGIN_NAME: AntiToolbox
-  VERSION_FILE_PATH: AntiToolbox/Version.h
+  VERSION_FILE_PATH: src/Version.h
   BUILD_CONFIGURATION: Release
   BUILD_TYPE: Release
   SDK_DIR: ./SDK
-  BDS_VERSION: 1.19.50.02
+  BDS_VERSION: 1.19.52.01
 
 jobs:
   build:
@@ -71,9 +71,9 @@ jobs:
         run: |
           mkdir output/
           mkdir output/${{env.PLUGIN_NAME}}/
-          cp -f x64/Release/*.dll output/${{env.PLUGIN_NAME}}/
+          cp -f out/Release/*.dll output/${{env.PLUGIN_NAME}}/
           mkdir output/PDB/
-          cp -f x64/Release/*.pdb output/PDB/
+          cp -f out/Release/*.pdb output/PDB/
           # mkdir output/${{env.PLUGIN_NAME}}/${{env.PLUGIN_NAME}}/
           # cp -r Data/* output/${{env.PLUGIN_NAME}}/${{env.PLUGIN_NAME}}/
         shell: bash

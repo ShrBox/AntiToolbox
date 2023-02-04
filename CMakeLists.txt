@@ -3,12 +3,12 @@ project(AntiToolbox)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_BUILD_TYPE Release)
-set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/x64/)
-set(TARGET_DIR ${CMAKE_SOURCE_DIR}/x64/Release/)
+set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/out/)
+set(TARGET_DIR ${CMAKE_SOURCE_DIR}/out/)
 
 file(GLOB SRC_FILES
-        ${PROJECT_SOURCE_DIR}/AntiToolbox/*.cpp
-        ${PROJECT_SOURCE_DIR}/AntiToolbox/*.h
+        ${PROJECT_SOURCE_DIR}/src/*.cpp
+        ${PROJECT_SOURCE_DIR}/src/*.h
         )
 
 add_definitions(-D"NDEBUG" -D"LLMONEY_EXPORTS" -D"_CRT_SECURE_NO_WARNINGS" -D"_WINDOWS"
