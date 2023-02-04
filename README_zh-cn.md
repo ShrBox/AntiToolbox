@@ -1,6 +1,7 @@
 # AntiToolbox
 
-阻止toolbox玩家进入服务器
+阻止toolbox玩家进入服务器  
+[English](README.md) | 简体中文
 
 ## 安装
 

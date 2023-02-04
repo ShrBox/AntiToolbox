@@ -1,6 +1,7 @@
 # AntiToolbox
 
-Block toolbox players
+Block toolbox players  
+English | [简体中文](README_zh-cn.md)
 
 ## Installation
 
