@@ -38,7 +38,7 @@
 // please start the latest version of LiteLoaderBDS and get the protocol version.
 // If you are confident about the version compatibility of your plugin, you can
 // just comment this line (NOT RECOMMENDED).
-#define TARGET_BDS_PROTOCOL_VERSION 560
+#define TARGET_BDS_PROTOCOL_VERSION 567
 
 // ***************************************************************************************
 
