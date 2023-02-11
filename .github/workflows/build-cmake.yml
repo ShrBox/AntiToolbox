@@ -8,7 +8,7 @@ env:
   BUILD_CONFIGURATION: Release
   BUILD_TYPE: Release
   SDK_DIR: ./SDK
-  BDS_VERSION: 1.19.52.01
+  BDS_VERSION: 1.19.61.01
 
 jobs:
   build:
