@@ -8,7 +8,7 @@
 ### 使用Lip
 
 ```bash
-lip install github.com/Tooth-Hub/AntiToolbox
+lip install AntiToolbox
 ```
 
 ### 手动安装

@@ -8,7 +8,7 @@ English | [简体中文](README_zh-cn.md)
 ### Use Lip
 
 ```bash
-lip install github.com/Tooth-Hub/AntiToolbox
+lip install AntiToolbox
 ```
 
 ### Manual
