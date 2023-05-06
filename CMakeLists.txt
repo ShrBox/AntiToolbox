@@ -35,6 +35,6 @@ include_directories(${PROJECT_SOURCE_DIR}/SDK/include/llapi)
 include_directories(${PROJECT_SOURCE_DIR}/Header)
 
 add_custom_command(TARGET AntiToolbox PRE_BUILD
-        COMMAND cmd /c ${PROJECT_SOURCE_DIR}/prepareLib.cmd ${PROJECT_SOURCE_DIR}
+        COMMAND cmd /c ${PROJECT_SOURCE_DIR}/prepare_libraries.cmd ${PROJECT_SOURCE_DIR}
         COMMENT "Preparing Library"
         )
