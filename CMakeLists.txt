@@ -3,8 +3,6 @@ project(AntiToolbox)
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_BUILD_TYPE Release)
-set(LIBRARY_OUTPUT_PATH ${CMAKE_SOURCE_DIR}/out/)
-set(TARGET_DIR ${CMAKE_SOURCE_DIR}/out/)
 
 file(GLOB SRC_FILES
         ${PROJECT_SOURCE_DIR}/src/*.cpp
