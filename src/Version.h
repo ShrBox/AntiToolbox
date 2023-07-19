@@ -26,7 +26,7 @@
 // The version of your plugin. If you do not know how to set it, please refer
 // to https://semver.org/ .
 #define PLUGIN_VERSION_MAJOR 2
-#define PLUGIN_VERSION_MINOR 14
+#define PLUGIN_VERSION_MINOR 15
 #define PLUGIN_VERSION_REVISION 0
 #define PLUGIN_VERSION_BUILD 0
 
@@ -38,7 +38,7 @@
 // please start the latest version of LiteLoaderBDS and get the protocol version.
 // If you are confident about the version compatibility of your plugin, you can
 // just comment this line (NOT RECOMMENDED).
-#define TARGET_BDS_PROTOCOL_VERSION 589
+#define TARGET_BDS_PROTOCOL_VERSION 594
 
 // ***************************************************************************************
 
